@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+    </head>
+    <div class="mode">
+        <button class="moded" onclick="toggle()"><i class="fas fa-moon"></i>Switch mode</button>
+    </div>
+    <div class="container">
+        <h1>Calculator</h1>
+        <input id="entry" type="text" placeholder="I can do maths.." >
+        <div class="btns">
+            <button onclick="Place(0)">0</button>
+            <button onclick="Place(1)">1</button>
+            <button onclick="Place(2)">2</button>
+            <button onclick="Place(3)">3</button>
+            <button onclick="Place(4)">4</button>
+            <button onclick="Place(5)">5</button>
+            <button onclick="Place(6)">6</button>
+            <button onclick="Place(7)">7</button>
+            <button onclick="Place(8)">8</button>
+            <button onclick="Place(9)">9</button>
+            <button onclick="Place('+')">+</button>
+            <button onclick="Place('-')">-</button>
+            <button onclick="Place('/')">/</button>
+            <button onclick="Place('*')">*</button>
+            <button onclick="Place('.')">.</button>
+            <button onclick="Clear()">C</button>
+        </div>
+        <div class="extras">
+            <button onclick="delet()">Del</button>
+            <button onclick="exe()">=</button>
+        </div>
+        <p>© 2022 By Jonny</p>
+    </div>
+
+<script>
+    var val = document.getElementById("entry");
+
+    function Place(v) {
+        val.value+=v;
+    }
+
+    function Clear(){
+        val.value="";
+    }
+
+    function delet() {
+        val.value=val.value.substr(0,val.value.length-1);
+    }
+
+    function exe(){
+        val.value=eval(val.value);
+    }
+    function toggle() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+</script>
+</html>
